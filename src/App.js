@@ -1,4 +1,5 @@
 import React from "react";
+import MessagePane from './MessagePane/MessagePane'
 import "./App.css";
 
 const messages = [
@@ -28,23 +29,10 @@ const messages = [
   }
 ];
 
-const Message = ({author, text}) => {
-    return (<div className="Message">
-                <div className="Message-author">{author}</div>
-                <div className="Message-text">{text}</div>
-            </div>)
-}
-
-const List = ({messages}) => {
-    return (<div className="MessagePane-Form">
-                {messages.map(({id, author, text}) => <Message key={id} author={author} text={text}/> )}
-            </div>)
-}
-
 function App() {
   return (
     <div className="App">
-        <List messages={messages}/>
+        <MessagePane messages={messages}/>
     </div>
   );
 }
