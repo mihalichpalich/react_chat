@@ -7,34 +7,50 @@ const messages = [
     id: 1,
     text: 'hi',
     author: 'Ben',
-    channel_id: 1
+    user_id: 1
   },
   {
     id: 2,
     text: 'hi to you too',
     author: 'Jen',
-    channel_id: 1
+    user_id: 2
   },
   {
     id: 3,
     text: 'hi from another user',
     author: 'Meg',
-    channel_id: 2
+    user_id: 3
   },
   {
     id: 4,
     text: 'hi to you too from another user',
     author: 'Jeff',
-    channel_id: 2
+    user_id: 4
   }
 ];
 
-function App() {
-  return (
-    <div className="App">
-        <MessagePane messages={messages}/>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      messages
+    };
+    this.onSendMessage = this.onSendMessage.bind(this);
+  }
+
+  onSendMessage(text) {
+    const newMessage = {
+      id: this.state.messages[this.state.messages.length - 1].id +1
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+          <MessagePane messages={this.state.messages}/>
+      </div>
+    );
+  }
 }
 
 export default App;
