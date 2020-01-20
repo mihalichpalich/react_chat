@@ -26,7 +26,7 @@
   margin-top: 5px;
 }
 
-.ChannelList {
+.UserList {
   width: 200px;
   border: 1px solid black;
   display: flex;
@@ -34,7 +34,7 @@
   flex-direction: column;
 }
 
-.ChannelList-item {
+.UserList-item {
   height: 30px;
   display: flex;
   align-items: center;
@@ -42,11 +42,11 @@
   padding: 0 5px;
 }
 
-.ChannelList-item-selected {
+.UserList-item-selected {
   background-color: #00ffd0;
 }
 
-.ChannelList-item:hover {
+.UserList-item:hover {
   background-color: #00ffd0;
   cursor: pointer;
 }
