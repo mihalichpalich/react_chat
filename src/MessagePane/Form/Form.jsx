@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 class Form extends React.Component {
     constructor() {
@@ -42,10 +41,6 @@ class Form extends React.Component {
                 </div>)
     }
 }
-
-// Form.propTypes = {
-//     onSend: React.PropTypes.func.isRequired
-// }
 
 Form.defaultProps = {
     onSend: () => {}
