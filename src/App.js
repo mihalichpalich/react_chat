@@ -1,9 +1,8 @@
 import React from "react";
-import MessagePane from './MessagePane/MessagePane'
-import UserList from './UserList/UserList'
+import {connect} from 'react-redux';
+import MessagePane from './MessagePane/MessagePane';
+import UserList from './UserList/UserList';
 import "./App.css";
-
-const messages = [];
 
 const users = [
   { id: 1, name: 'Ben' },
@@ -16,7 +15,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      messages,
+      messages: [],
       users,
       selectedUser: null
     };
@@ -48,4 +47,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => state;
+
+export default connect(mapStateToProps)(App);
